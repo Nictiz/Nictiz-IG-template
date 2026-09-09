@@ -14,7 +14,7 @@
         <td><a href="#{{i.key}}">{{i.key.replaceMatches('[^\\.]', '').replace('.', '&nbsp;&nbsp;&nbsp;&nbsp;')}}{{i.key}}</a></td>
         <td>{{i.label}}</td>
         <td>{{i.requirement || markdownify}}</td>
-        <td>{{i.source.display}}</td>
+        <td>{% if i.source.reference %}<a href="{{i.source.reference}}">{% endif %}{{i.source.display}}{% if i.source.reference %}</a>{% endif %}</td>
         </tr>
     {% endfor %}
     </tbody>
