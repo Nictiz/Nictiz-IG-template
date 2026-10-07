@@ -3,6 +3,23 @@
   --ig-header-color: #ffffff; /* 21. Header color (sides) */
 }
 
+/* Re-added from cqf.css in the base2 template after it was removed */
+:root {
+  --navbar-bg-color: #105EAB; /* 2. Header container color */
+  --footer-bg-color: #505050; /* 3. Footer background color*/
+  --footer-container-bg-color: #105EAB; /* 4. Footer container color */
+  --btn-hover-color: #014384;  /* 6. Menu button hover color */
+}
+
+/* Generic settings common to all content IGs */
+:root {
+  --stripe-bg-color: #999999; /* 5. Header strip color */
+  --btn-active-color: #014384; /* 7. Menu button active color */
+  --btn-text-color: #e6e6e6; /* 8. Menu button text color */
+  --stu-note-background-color: #fff2ff; /* 19. (STU) Note box background color */
+  --stu-note-border-left-color: #ffa0ff; /* 20. (STU) Note box border color */
+}
+
 .dropdown-menu>li {
   position: relative;
 }
