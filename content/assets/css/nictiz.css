@@ -176,3 +176,19 @@ table.binding tr:first-child {
 dd {
   margin-left: 2em;
 }
+
+.req-origin-nl::before {
+  content: url("../../assets/images/nl.svg");
+  display: inline-block;
+  width: 24px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+
+.req-origin-eu::before {
+  content: url("../../assets/images/eu.svg");
+  display: inline-block;
+  width: 24px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}

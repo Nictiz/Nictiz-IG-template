@@ -10,11 +10,11 @@
     </thead>
     <tbody>
     {% for i in Requirements.statement %}
-        <tr id="{{i.key}}" >
+        <tr id="{{i.key}}">
         <td><a href="#{{i.key}}">{{i.key.replaceMatches('[^\\.]', '').replace('.', '&nbsp;&nbsp;&nbsp;&nbsp;')}}{{i.key}}</a></td>
-        <td>{{i.label}}</td>
+        <td><span {% if i.label.startsWith('EU') %}class="req-origin-eu"{% elsif i.label.startsWith('NL') %}class="req-origin-nl"{% endif %}>{{i.label}}</span></td>
         <td>{{i.requirement || markdownify}}</td>
-        <td>{% if i.source.reference %}<a href="{{i.source.reference}}">{% endif %}{{i.source.display}}{% if i.source.reference %}</a>{% endif %}</td>
+        <td>{% for source in i.source %}{% if source.reference %}<a href="{{source.reference}}">{% endif %}{{source.display}}{% if source.reference %}</a>{% endif %}<br />{% endfor %}</td>
         </tr>
     {% endfor %}
     </tbody>
