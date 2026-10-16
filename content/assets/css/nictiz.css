@@ -177,10 +177,14 @@ dd {
   margin-left: 2em;
 }
 
+.requirements-narrative ul {
+  padding: 0 0 0 12px;
+}
+
 .req-origin-nl::before {
   content: url("../../assets/images/nl.svg");
   display: inline-block;
-  width: 24px;
+  width: 20px;
   margin-right: 0.4em;
   vertical-align: middle;
 }
@@ -188,7 +192,12 @@ dd {
 .req-origin-eu::before {
   content: url("../../assets/images/eu.svg");
   display: inline-block;
-  width: 24px;
+  width: 20px;
   margin-right: 0.4em;
   vertical-align: middle;
+}
+
+.req-not-addressed {
+  background: lightgray;
+  color: #646363;
 }

@@ -1,18 +1,18 @@
 <div xmlns="http://www.w3.org/1999/xhtml">
-  <table class="grid">
+  <table class="grid requirements-narrative">
     <thead>
     <tr>
         <th>Id</th>
-        <th>Naam</th>
-        <th>Omschrijving</th>
-        <th>Bronnen</th>
+        <th>{% if Requirements.language = 'en' %}Name{% elsif Requirements.language = 'nl' %}Naam{% endif %}</th>
+        <th>{% if Requirements.language = 'en' %}Description{% elsif Requirements.language = 'nl' %}Omschrijving{% endif %}</th>
+        <th>{% if Requirements.language = 'en' %}Sources{% elsif Requirements.language = 'nl' %}Bronnen{% endif %}</th>
     </tr>
     </thead>
     <tbody>
     {% for i in Requirements.statement %}
-        <tr id="{{i.key}}">
+        <tr id="{{i.key}}" {% if i.requirement.matches('.*Niet-opgenomen informatiebehoefte.*') %}class="req-not-addressed"{% elsif i.requirement.matches('Excluded information requirement') %}class="req-not-addressed"{% endif %}>
         <td><a href="#{{i.key}}">{{i.key.replaceMatches('[^\\.]', '').replace('.', '&nbsp;&nbsp;&nbsp;&nbsp;')}}{{i.key}}</a></td>
-        <td><span {% if i.label.startsWith('EU') %}class="req-origin-eu"{% elsif i.label.startsWith('NL') %}class="req-origin-nl"{% endif %}>{{i.label}}</span></td>
+        <td>{% if i.requirement.matches('.*Aanscherping van.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% elsif i.requirement.matches('.*Refinement of.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% endif %}<span {% if i.label.startsWith('EU') %}class="req-origin-eu"{% elsif i.label.startsWith('NL') %}class="req-origin-nl"{% endif %}>{{i.label}}</span></td>
         <td>{{i.requirement || markdownify}}</td>
         <td>{% for source in i.source %}{% if source.reference %}<a href="{{source.reference}}">{% endif %}{{source.display}}{% if source.reference %}</a>{% endif %}<br />{% endfor %}</td>
         </tr>
