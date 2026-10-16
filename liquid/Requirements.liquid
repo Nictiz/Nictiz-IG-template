@@ -11,8 +11,8 @@
     <tbody>
     {% for i in Requirements.statement %}
         <tr id="{{i.key}}" {% if i.requirement.matches('.*Niet-opgenomen informatiebehoefte.*') %}class="req-not-addressed"{% elsif i.requirement.matches('Excluded information requirement') %}class="req-not-addressed"{% endif %}>
-        <td><a href="#{{i.key}}">{{i.key.replaceMatches('[^\\.]', '').replace('.', '&nbsp;&nbsp;&nbsp;&nbsp;')}}{{i.key}}</a></td>
-        <td>{% if i.requirement.matches('.*Aanscherping van.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% elsif i.requirement.matches('.*Refinement of.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% endif %}<span {% if i.label.startsWith('EU') %}class="req-origin-eu"{% elsif i.label.startsWith('NL') %}class="req-origin-nl"{% endif %}>{{i.label}}</span></td>
+        <td>{% if i.requirement.matches('.*Aanscherping van.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% elsif i.requirement.matches('.*Refinement of.*') %}&nbsp;&nbsp;&nbsp;&nbsp;{% endif %}<a href="#{{i.key}}">{{i.key.replaceMatches('[^\\.]', '').replace('.', '&nbsp;&nbsp;&nbsp;&nbsp;')}}{{i.key}}</a></td>
+        <td><span {% if i.label.startsWith('EU') %}class="req-origin-eu"{% elsif i.label.startsWith('NL') %}class="req-origin-nl"{% endif %}>{{i.label}}</span></td>
         <td>{{i.requirement || markdownify}}</td>
         <td>{% for source in i.source %}{% if source.reference %}<a href="{{source.reference}}">{% endif %}{{source.display}}{% if source.reference %}</a>{% endif %}<br />{% endfor %}</td>
         </tr>
