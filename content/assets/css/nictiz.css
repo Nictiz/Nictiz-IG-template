@@ -341,6 +341,6 @@ div#hl7-nav div#ig-status {
 }
 
 .req-not-addressed {
-  background: lightgray;
-  color: #646363;
+  background: var(--nictiz-grey-light);
+  color: var(--nictiz-grey-dark);
 }
