@@ -319,3 +319,16 @@ div#hl7-nav div#ig-status {
     width: 100%;
     text-align: center;
 }
+
+th, td {
+  padding: 5px 7px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 2px solid var(--nictiz-grey-mid);
+}
+
+th {
+  color: var(--nictiz-orange);
+  font-weight: 700;
+  border-top: 2px solid var(--nictiz-grey-mid);
+}
