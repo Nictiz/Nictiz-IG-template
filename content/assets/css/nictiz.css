@@ -319,7 +319,37 @@ div#hl7-nav div#ig-status {
     width: 100%;
     text-align: center;
 }
+/* Header: the base template puts the logo (#hl7-nav) and the IG title
+   (#ig-status) one under the other, so the logo floats above the title.
+   On wider screens, put them on one row: logo on the left, title centred.
+   The container's clearfix pseudo-elements would become grid items, so they
+   are hidden. Narrow screens keep the stacked layout. */
+@media (min-width: 768px) {
+  #segment-header > .container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  #segment-header > .container::before,
+  #segment-header > .container::after {
+    display: none;
+  }
+  #segment-header #hl7-nav {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0.5em 0;
+  }
+  #segment-header #ig-status {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+  }
+  #segment-header #ig-status p {
+    margin: 0;
+  }
+}
 
+/* Styling for the requirements */
 .requirements-narrative ul {
   padding: 0 0 0 12px;
 }
