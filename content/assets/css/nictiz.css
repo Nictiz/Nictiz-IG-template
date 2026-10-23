@@ -348,3 +348,29 @@ div#hl7-nav div#ig-status {
     margin: 0;
   }
 }
+
+/* Styling for the requirements */
+.requirements-narrative ul {
+  padding: 0 0 0 12px;
+}
+
+.req-origin-nl::before {
+  content: url("../../assets/images/nl.svg");
+  display: inline-block;
+  width: 20px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+
+.req-origin-eu::before {
+  content: url("../../assets/images/eu.svg");
+  display: inline-block;
+  width: 20px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+
+.req-not-addressed {
+  background: var(--nictiz-grey-light);
+  color: var(--nictiz-grey-dark);
+}
