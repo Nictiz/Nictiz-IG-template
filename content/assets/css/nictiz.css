@@ -319,6 +319,20 @@ div#hl7-nav div#ig-status {
     width: 100%;
     text-align: center;
 }
+
+th, td {
+  padding: 5px 7px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 2px solid var(--nictiz-grey-mid);
+}
+
+th {
+  color: var(--nictiz-orange);
+  font-weight: 700;
+  border-top: 2px solid var(--nictiz-grey-mid);
+}
+
 /* Header: the base template puts the logo (#hl7-nav) and the IG title
    (#ig-status) one under the other, so the logo floats above the title.
    On wider screens, put them on one row: logo on the left, title centred.
