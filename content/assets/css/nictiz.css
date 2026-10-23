@@ -333,6 +333,11 @@ th {
   border-top: 2px solid var(--nictiz-grey-mid);
 }
 
+.dict td {
+  /* Erase table borders for tables used within the detailed documentation of elements */
+  border-bottom: none;
+}
+
 /* Header: the base template puts the logo (#hl7-nav) and the IG title
    (#ig-status) one under the other, so the logo floats above the title.
    On wider screens, put them on one row: logo on the left, title centred.
